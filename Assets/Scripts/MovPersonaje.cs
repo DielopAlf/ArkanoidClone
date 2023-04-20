@@ -15,7 +15,7 @@ public class MovPersonaje : MonoBehaviour
     
 
 
-    void Start()
+    void Update()
     {
 
         if (Input.GetKey(botonDerecha))
