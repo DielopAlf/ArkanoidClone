@@ -10,6 +10,10 @@ public class MovPersonaje : MonoBehaviour
     KeyCode botonIzquierda;
     [SerializeField]
     public float Speed = 10f;
+    public float maxdistancia ;
+   // public GameObject murosdech;
+
+
 
     Rigidbody player;
     
@@ -18,18 +22,24 @@ public class MovPersonaje : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(botonDerecha))
+        if (Input.GetKey(botonDerecha) && gameObject.transform.position.x<maxdistancia)
         {
 
 
             transform.position += Vector3.right * Time.deltaTime * Speed;
 
         }
-        if (Input.GetKey(botonIzquierda))
+
+        if (Input.GetKey(botonIzquierda) && gameObject.transform.position.x>maxdistancia*-1)
         {
 
             transform.position += Vector3.left * Time.deltaTime * Speed;
         }
+
+
+
+
+
 
        // player = GetComponent<Rigidbody>();
     }

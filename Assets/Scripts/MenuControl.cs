@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-
 public class MenuControl : MonoBehaviour
 {
+
     public GameObject menuInicial;
+
+
+  
+
+    
 
     void Start()
     {
@@ -30,4 +34,9 @@ public class MenuControl : MonoBehaviour
         menuInicial.SetActive(true);
 
     }
+   
 }
+
+
+
+

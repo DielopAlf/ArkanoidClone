@@ -8,6 +8,7 @@ TagManager:
   - Plataforma
   - Muro
   - Ball
+  - Techo
   layers:
   - Default
   - TransparentFX
