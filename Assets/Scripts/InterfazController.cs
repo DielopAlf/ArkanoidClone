@@ -18,9 +18,9 @@ public class InterfazController : MonoBehaviour
 
     public GameObject pantalladerrota;
 
+    public GameObject pantallaDeVictoria;
 
-
-
+    public int plataformasRestantes;
 
 
     private void Awake()
@@ -78,6 +78,12 @@ public class InterfazController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
+    }
+    public void Ganar()
+    {
+        pantallaDeVictoria.SetActive(true);
+        
+       // btnReiniciar.SetActive(true);
     }
 
 }

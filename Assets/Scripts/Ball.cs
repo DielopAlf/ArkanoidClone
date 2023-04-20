@@ -5,111 +5,105 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
-
-    [SerializeField]
-    Vector3 direction;
-    [SerializeField]
-    float Speed = 2f;
-    public int lives = 3;
-    public Text livesText;
-    public float maxangulo= 0.7f;
-    public Vector2 posinicial;
+    [SerializeField] Vector3 direccion;
+    [SerializeField] float velocidad = 2f;
+    public int vidas = 3;
+    public Text textoVidas;
+    public float anguloMaximo = 0.7f;
+    public Vector2 posicionInicial;
     bool activada;
-    public float esperainicial=2f;
-
-
-
+    public float esperaInicial = 2f;
+    int plataformasRestantes;
+    [SerializeField] GameObject pantallaDeVictoria;
 
     void Start()
     {
-
         StartCoroutine(ResetPelota());
-        InterfazController.instance.setvidas(lives);     
-
-
-        UpdateLivesUI();
+        InterfazController.instance.setvidas(vidas);
+        ActualizarTextoVidas();
+        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (activada== true)
+        if (activada)
         {
-            transform.position += direction * Time.deltaTime * Speed;
-
+            transform.position += direccion * Time.deltaTime * velocidad;
         }
-
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-
-            Debug.Log("funciona");
-            direction.y = direction.y * -1f;
-            direction.x = Random.Range(-maxangulo, maxangulo);
-
+            direccion.y = direccion.y * -1f;
+            direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
         }
-        if (collision.gameObject.tag == "Muro")
+        else if (collision.gameObject.tag == "Muro")
         {
-
-            direction.x = direction.x * -1f;
-
+            direccion.x = direccion.x * -1f;
         }
-        if (collision.gameObject.tag == "Techo")
+        else if (collision.gameObject.tag == "Techo")
         {
-
-            direction.y = direction.y * -1f;
-            direction.x = Random.Range(-maxangulo, maxangulo);
-
-
+            direccion.y = direccion.y * -1f;
+            direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
         }
-        if (collision.gameObject.tag == "Plataforma")
+        else if (collision.gameObject.CompareTag("Plataforma"))
         {
-
-            direction.y = direction.y * -1f;
-            direction.x = Random.Range(-maxangulo, maxangulo);
-
-
+            Plataforma plataforma = collision.gameObject.GetComponent<Plataforma>();
+            plataforma.HitByBall();
+            direccion.y = direccion.y * -1f;
+            direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
+            plataformasRestantes--;
+            if (plataformasRestantes == 0)
+            {
+                pantallaDeVictoria.SetActive(true);
+            }
         }
-
-        //escribir código de cambio de direccion de pelota tras marcar
-
-        if (collision.gameObject.tag =="Zona Muerte")
+        else if (collision.gameObject.CompareTag("Zona Muerte"))
         {
-            muerte();
+            Muerte();
         }
     }
-    private void UpdateLivesUI()
+
+    private void ActualizarTextoVidas()
     {
-       // livesText.text = "Lives: " + lives; // Actualizar el texto que muestra el número de vidas
+        // textoVidas.text = "Vidas: " + vidas; // Actualizar el texto que muestra el número de vidas
     }
 
     public IEnumerator ResetPelota()
     {
-        activada= false;
-        direction= new Vector2(0, 0);
-        transform.position = posinicial;
-        yield return new WaitForSeconds(esperainicial);
-        direccioninicial();
-        activada= true;
+        activada = false;
+        direccion = new Vector2(0, 0);
+        transform.position = posicionInicial;
+        yield return new WaitForSeconds(esperaInicial);
+        DireccionInicial();
+        activada = true;
+    }
+    public void DireccionInicial()
+    {
+        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length;
+
+        float dirx = Random.Range(-anguloMaximo, anguloMaximo);
+        direccion=new Vector2(dirx, 1);
+
+
 
     }
-    public void direccioninicial()
+    public void DestruirPlataforma()
     {
-
-        float dirx = Random.Range(-maxangulo,maxangulo);
-        direction=new Vector2(dirx,1);
-
-
-
-    }
-    public void muerte()
-    {
-        if(lives>1)
+        plataformasRestantes--;
+        if (plataformasRestantes == 0)
         {
-            lives-=1;
+           
+            Debug.Log("¡Has ganado!");
+        }
+    }
+    public void Muerte()
+    {
+        if (vidas>1)
+        {
+            vidas-=1;
             InterfazController.instance.perdervida();
             StartCoroutine(ResetPelota());
         }
@@ -120,5 +114,19 @@ public class Ball : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+    }
+    public void ActualizarPlataformasRestantes(int cantidadPlataformasRestantes)
+    {
+        plataformasRestantes = cantidadPlataformasRestantes;
+
+        if (plataformasRestantes == 0)
+        {
+            pantallaDeVictoria.SetActive(true);
+        }
+        
+    }
+    public void SetPlataformasRestantes(int count)
+    {
+        plataformasRestantes = count;
     }
 }
