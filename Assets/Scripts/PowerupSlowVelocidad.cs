@@ -7,7 +7,7 @@ public class PowerupSlowVelocidad : MonoBehaviour
     public float velocidadRotacion = 10f;
     public float velocidadMovimiento = 0.5f;
     public float tiempoVida = 10f;
-    public float velocidadExtra = 5f;
+    public float velocidadExtra = -1f;
     private void Start()
     {
         // Destruir el power up después de un tiempo

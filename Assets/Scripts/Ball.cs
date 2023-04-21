@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
 
     public float tiempoDeInvencibilidad = 2f;
     private bool invencible = false;
-     bool juegoDetenido = false;
+    bool juegoDetenido = false;
     public TextMeshProUGUI puntossrecord;
     public TextMeshProUGUI PuntosFinal;
     public TextMeshProUGUI PuntosGanadosText;
