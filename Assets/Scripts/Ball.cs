@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
 
 
 public class Ball : MonoBehaviour
@@ -15,20 +13,9 @@ public class Ball : MonoBehaviour
     public float anguloMaximo = 0.7f;
     public Vector2 posicionInicial;
     bool activada;
-    public float LowSpeed = 0.5f;
     public float esperaInicial = 2f;
     int plataformasRestantes;
     [SerializeField] GameObject pantallaDeVictoria;
-    [SerializeField] GameObject pantallaDerrota;
-
-    public float tiempoDeInvencibilidad = 2f;
-    private bool invencible = false;
-    bool juegoDetenido = false;
-    public TextMeshProUGUI puntossrecord;
-    public TextMeshProUGUI PuntosFinal;
-    public TextMeshProUGUI PuntosGanadosText;
-
-
 
     void Start()
     {
@@ -36,21 +23,11 @@ public class Ball : MonoBehaviour
         InterfazController.instance.setvidas(vidas);
         ActualizarTextoVidas();
         plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length;
-    }
-    void updatepointsspelota(float puntos)
-    {
-        if (puntos >= 1)
-        {
-            PuntosFinal.gameObject.SetActive(true);
-            PuntosFinal.text = "+" + puntos;
-        }
-        else
-        {
-            PuntosFinal.gameObject.SetActive(false);
-        }
-    }
+     //  private Victoria victoria; // Referencia al script GameManager
 
-    void Update()
+}
+
+void Update()
     {
         if (activada)
         {
@@ -77,13 +54,17 @@ public class Ball : MonoBehaviour
         else if (collision.gameObject.CompareTag("Plataforma"))
         {
             Plataforma plataforma = collision.gameObject.GetComponent<Plataforma>();
-            plataforma.HitByBall();
+          // plataforma.HitByBall();
+            plataforma.GolpesRestantes--;
             direccion.y = direccion.y * -1f;
             direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
-            plataformasRestantes--;
-            if (plataformasRestantes == 0)
+            if (plataforma.GolpesRestantes <= 0)
             {
-                pantallaDeVictoria.SetActive(true);
+                plataformasRestantes--;
+                if (plataformasRestantes == 0)
+                {
+                    pantallaDeVictoria.SetActive(true);
+                }
             }
         }
         else if (collision.gameObject.CompareTag("Zona Muerte"))
@@ -121,7 +102,7 @@ public class Ball : MonoBehaviour
         plataformasRestantes--;
         if (plataformasRestantes == 0)
         {
-           
+
             Debug.Log("¡Has ganado!");
         }
     }
@@ -141,11 +122,6 @@ public class Ball : MonoBehaviour
         }
 
     }
-    
-    public void SetPlataformasRestantes(int count)
-    {
-        plataformasRestantes = count;
-    }
     public void ActualizarPlataformasRestantes(int cantidadPlataformasRestantes)
     {
         plataformasRestantes = cantidadPlataformasRestantes;
@@ -153,41 +129,11 @@ public class Ball : MonoBehaviour
         if (plataformasRestantes == 0)
         {
             pantallaDeVictoria.SetActive(true);
-            Time.timeScale = 0f;
-            juegoDetenido = true;
         }
 
     }
-    IEnumerator TiempoInvencible()
+    public void SetPlataformasRestantes(int count)
     {
-        invencible = true;
-        yield return new WaitForSeconds(tiempoDeInvencibilidad);
-        invencible = false;
-    }
-
-    public void ActivarPowerUp()
-    {
-        LowSpeed *= -2;
-        StartCoroutine(DesactivarPowerUp());
-    }
-
-    IEnumerator DesactivarPowerUp()
-    {
-        yield return new WaitForSeconds(5f);
-        LowSpeed = velocidad;
-    }
-    public void ReiniciarNivel()
-    {
-        // Cargar de nuevo la escena actual
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1; // Restablecer la escala de tiempo del juego
-        juegoDetenido = false;
-        GetComponent<Ball>().enabled = true;
-    }
-    public void VolverAlMenuPrincipal()
-    {
-        // Cargar la escena del menú principal
-        SceneManager.LoadScene("Menu");
-        Time.timeScale = 1; // Restablecer la escala de tiempo del juego
+        plataformasRestantes = count;
     }
 }

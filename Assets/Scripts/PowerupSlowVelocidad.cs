@@ -31,7 +31,7 @@ public class PowerupSlowVelocidad : MonoBehaviour
             Ball pelota = other.GetComponent<Ball>();
 
             // Aumentar la velocidad de la pelota
-            pelota.LowSpeed += velocidadExtra;
+            //pelota.LowSpeed += velocidadExtra;
 
             // Destruir el power up
             Destroy(gameObject);
