@@ -41,15 +41,8 @@ public class MovPersonaje : MonoBehaviour
 
 
 
-       // player = GetComponent<Rigidbody>();
+      
     }
 
-    // Update is called once per frame
-    /*void Update()
-    {
-        float h = Input.GetAxis("Horizontal");
-       
-
-        //Vector3
-    }*/
+    
 }
