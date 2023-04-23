@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 public class InterfazController : MonoBehaviour
 {
 
-
-
+    
     public static InterfazController instance;
 
 
@@ -18,7 +17,7 @@ public class InterfazController : MonoBehaviour
 
     public GameObject pantalladerrota;
 
-    public GameObject pantallaDeVictoria;
+    public GameObject pantallaVictoria;
 
     public int plataformasRestantes;
 
@@ -79,11 +78,16 @@ public class InterfazController : MonoBehaviour
 
 
     }
-    public void Ganar()
+   /* public void Ganar()
     {
-        pantallaDeVictoria.SetActive(true);
+        pantallaVictoria.SetActive(true);
         
        // btnReiniciar.SetActive(true);
+    }*/
+
+    public void MostrarPantallaVictoria()
+    {
+        pantallaVictoria.SetActive(true);
     }
 
 }

@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour
 {
-    public int GolpesparaRomperse = 1;
-    public int GolpesRestantes;
-
-    private void Start()
-    {
-        GolpesRestantes = GolpesparaRomperse;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            HitByBall();
-        }
-    }
+    public int GolpesparaRomperse = 1; // Número de veces que se debe golpear la plataforma para que se rompa
+    private int GolpesDados = 0; // Número de veces que se ha golpeado la plataforma
 
     public void HitByBall()
     {
-        GolpesRestantes--;
-        if (GolpesRestantes <= 0)
+        GolpesDados++;
+        if (GolpesDados >= GolpesparaRomperse)
         {
             DestroyPlatform();
         }
@@ -31,6 +18,8 @@ public class Plataforma : MonoBehaviour
 
     private void DestroyPlatform()
     {
+        ControladorVictoria.Instance.PlataformaDestruida();
+
         // Instanciar la versión destruida de la plataforma y destruir la versión original
         // GameObject destroyedPlatform = Instantiate(transform.position, transform.rotation);
         Destroy(gameObject);

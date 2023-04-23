@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30011430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 3.31, z: -0.07235172}
+  m_LocalPosition: {x: -0.96, y: -0.06, z: -0.07235172}
   m_LocalScale: {x: 1.1237, y: 1.1237, z: 1.1237}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2094,14 +2094,8 @@ MonoBehaviour:
   textoVidas: {fileID: 0}
   anguloMaximo: 0.7
   posicionInicial: {x: 0, y: 0}
-  LowSpeed: 3
+  activada: 0
   esperaInicial: 1
-  pantallaDeVictoria: {fileID: 1058340249}
-  pantallaDerrota: {fileID: 340703797}
-  tiempoDeInvencibilidad: 2
-  puntossrecord: {fileID: 0}
-  PuntosFinal: {fileID: 0}
-  PuntosGanadosText: {fileID: 1688787863}
 --- !u!50 &704430525
 Rigidbody2D:
   serializedVersion: 4
@@ -4222,6 +4216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148716087}
   - component: {fileID: 1148716088}
+  - component: {fileID: 1148716089}
   m_Layer: 0
   m_Name: controllador
   m_TagString: Untagged
@@ -4259,8 +4254,21 @@ MonoBehaviour:
   posprimeravida: {x: -8, y: -4.5}
   spritevida: {fileID: 6398672462691605006, guid: 71db4c5da3200fa46803d437d39dc05d, type: 3}
   pantalladerrota: {fileID: 340703797}
-  pantallaDeVictoria: {fileID: 1058340249}
-  plataformasRestantes: 0
+  pantallaVictoria: {fileID: 1058340249}
+  plataformasRestantes: 28
+--- !u!114 &1148716089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148716085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f905523ef24400049804826ec8727df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pelota: {fileID: 704430524}
 --- !u!1 &1169542412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,7 +5012,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.54, y: 0.22}
   m_EdgeRadius: 0
---- !u!114 &1320685245
+--- !u!114 &1320685248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7574,7 +7582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140455987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.83, y: 2.56, z: -0.083673015}
+  m_LocalPosition: {x: -2.83, y: 5.93, z: -0.083673015}
   m_LocalScale: {x: 1.118025, y: 1.118025, z: 1.118025}
   m_ConstrainProportionsScale: 0
   m_Children:
