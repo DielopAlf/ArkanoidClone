@@ -23,7 +23,7 @@ public class ControladorVictoria : MonoBehaviour
 
     public void Start()
     {
-        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length;
+        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length+1;
     }
 
     public void CheckVictory()

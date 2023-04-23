@@ -1450,8 +1450,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 704430524}
-        m_TargetAssemblyTypeName: Ball, Assembly-CSharp
+      - m_Target: {fileID: 1148716088}
+        m_TargetAssemblyTypeName: InterfazController, Assembly-CSharp
         m_MethodName: VolverAlMenuPrincipal
         m_Mode: 1
         m_Arguments:
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direccion: {x: 0, y: 0, z: 0}
   velocidad: 6
-  vidas: 10
+  vidas: 1
   textoVidas: {fileID: 0}
   anguloMaximo: 0.7
   posicionInicial: {x: 0, y: 0}
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   spritevida: {fileID: 6398672462691605006, guid: 71db4c5da3200fa46803d437d39dc05d, type: 3}
   pantalladerrota: {fileID: 340703797}
   pantallaVictoria: {fileID: 1058340249}
-  plataformasRestantes: 28
+  plataformasRestantes: 0
 --- !u!114 &1148716089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5403,8 +5403,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 704430524}
-        m_TargetAssemblyTypeName: Ball, Assembly-CSharp
+      - m_Target: {fileID: 1148716088}
+        m_TargetAssemblyTypeName: InterfazController, Assembly-CSharp
         m_MethodName: VolverAlMenuPrincipal
         m_Mode: 1
         m_Arguments:
