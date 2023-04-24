@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
+
 public class InterfazController : MonoBehaviour
 {
 
     
     public static InterfazController instance;
 
+   
 
     List<GameObject> spritevidas = new List<GameObject>();
 
@@ -96,6 +100,5 @@ public class InterfazController : MonoBehaviour
     {
         pantallaVictoria.SetActive(true);
     }
-
-
+  
 }

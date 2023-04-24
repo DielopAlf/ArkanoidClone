@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &231509537
 GameObject:
@@ -454,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &328619037
 GameObject:
@@ -973,6 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &382021761
 GameObject:
@@ -1120,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &459132899
 GameObject:
@@ -1815,6 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &694900443
 GameObject:
@@ -1962,6 +1967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &704430519
 GameObject:
@@ -2090,12 +2096,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direccion: {x: 0, y: 0, z: 0}
   velocidad: 6
-  vidas: 1
+  vidas: 5
   textoVidas: {fileID: 0}
   anguloMaximo: 0.7
   posicionInicial: {x: 0, y: 0}
   activada: 0
   esperaInicial: 1
+  puntuacionController: {fileID: 1148716091}
 --- !u!50 &704430525
 Rigidbody2D:
   serializedVersion: 4
@@ -2263,6 +2270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &719379379
 GameObject:
@@ -2448,6 +2456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &792053141
 GameObject:
@@ -3013,6 +3022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &820500079
 GameObject:
@@ -3327,6 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &955632111
 GameObject:
@@ -3474,6 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &975753516
 GameObject:
@@ -3621,6 +3633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &989723302
 GameObject:
@@ -4058,6 +4071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1145036588
 GameObject:
@@ -4205,6 +4219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &1148716085
 GameObject:
@@ -4217,6 +4232,8 @@ GameObject:
   - component: {fileID: 1148716087}
   - component: {fileID: 1148716088}
   - component: {fileID: 1148716089}
+  - component: {fileID: 1148716090}
+  - component: {fileID: 1148716091}
   m_Layer: 0
   m_Name: controllador
   m_TagString: Untagged
@@ -4251,6 +4268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c44eb6a101015418764e84a2def4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosTotales: 0
+  textoPuntos: {fileID: 0}
   posprimeravida: {x: -8, y: -4.5}
   spritevida: {fileID: 6398672462691605006, guid: 71db4c5da3200fa46803d437d39dc05d, type: 3}
   pantalladerrota: {fileID: 340703797}
@@ -4269,6 +4288,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pelota: {fileID: 704430524}
+--- !u!114 &1148716090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148716085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a11ef0a084a41747a81ac1374fb7519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntos: 0
+  textoPuntos: {fileID: 1688787863}
+--- !u!114 &1148716091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148716085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f1bdf5d0ce1774eb60ca85801cee33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosTotales: 0
+  textoPuntos: {fileID: 1688787863}
 --- !u!1 &1169542412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,6 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1201079580
 GameObject:
@@ -4562,6 +4610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1239599361
 GameObject:
@@ -4709,6 +4758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &1249761410
 GameObject:
@@ -5024,6 +5074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1333013736
 GameObject:
@@ -5171,6 +5222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1381358451
 GameObject:
@@ -5318,6 +5370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1413607739
 GameObject:
@@ -5599,6 +5652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1471422845
 GameObject:
@@ -5881,6 +5935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1480831855
 GameObject:
@@ -6028,6 +6083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &1522445198
 GameObject:
@@ -6623,6 +6679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1688787861
 GameObject:
@@ -6659,7 +6716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 365, y: -223}
+  m_AnchoredPosition: {x: 319, y: -205}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688787863
@@ -7006,6 +7063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1786309871
 GameObject:
@@ -7153,6 +7211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1923101123
 GameObject:
@@ -7300,6 +7359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 1
 --- !u!1 &1996149636
 GameObject:
@@ -7447,6 +7507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb52855bd9fd8f458b056662f84b970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 10
   GolpesparaRomperse: 2
 --- !u!1 &2023514299
 GameObject:

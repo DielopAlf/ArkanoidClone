@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plataforma : MonoBehaviour
 {
+    public int puntos = 10;
     public int GolpesparaRomperse = 1; // Número de veces que se debe golpear la plataforma para que se rompa
     private int GolpesDados = 0; // Número de veces que se ha golpeado la plataforma
 
@@ -12,16 +13,19 @@ public class Plataforma : MonoBehaviour
         GolpesDados++;
         if (GolpesDados >= GolpesparaRomperse)
         {
+         ControladorVictoria.Instance.PlataformaDestruida();
+        PuntuacionController.Instance.AgregarPuntos(puntos);
+
             DestroyPlatform();
         }
     }
 
-    private void DestroyPlatform()
-    {
-        ControladorVictoria.Instance.PlataformaDestruida();
+   private void DestroyPlatform()
+{
+    ControladorVictoria.Instance.PlataformaDestruida();
+    PuntuacionController.Instance.AgregarPuntos(puntos);
 
-        // Instanciar la versión destruida de la plataforma y destruir la versión original
-        // GameObject destroyedPlatform = Instantiate(transform.position, transform.rotation);
-        Destroy(gameObject);
-    }
+    // Destruir la plataforma original
+    Destroy(gameObject);
+}
 }

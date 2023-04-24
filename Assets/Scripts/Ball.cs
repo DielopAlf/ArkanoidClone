@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
@@ -8,18 +9,20 @@ public class Ball : MonoBehaviour
     [SerializeField] Vector3 direccion;
     [SerializeField] float velocidad = 2f;
     public int vidas = 3;
-    public Text textoVidas;
+    public TextMeshProUGUI textoVidas;
     public float anguloMaximo = 0.7f;
     public Vector2 posicionInicial;
     public bool activada;
     public float esperaInicial = 2f;
+
+    public PuntuacionController puntuacionController;
 
     void Start()
     {
         StartCoroutine(ResetPelota());
         InterfazController.instance.setvidas(vidas);
         ActualizarTextoVidas();
-
+        puntuacionController = PuntuacionController.Instance;
     }
 
     void Update()
@@ -52,6 +55,7 @@ public class Ball : MonoBehaviour
             direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
 
             collision.gameObject.GetComponent<Plataforma>().HitByBall();
+            PuntuacionController.Instance.AgregarPuntos(10); // Añadir 10 puntos al destruir una plataforma
         }
         else if (collision.gameObject.CompareTag("Zona Muerte"))
         {
