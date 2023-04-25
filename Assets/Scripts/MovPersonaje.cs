@@ -11,6 +11,7 @@ public class MovPersonaje : MonoBehaviour
     [SerializeField]
     public float Speed = 10f;
     public float maxdistancia ;
+    public Ball pelota;
    // public GameObject murosdech;
 
 
@@ -42,6 +43,12 @@ public class MovPersonaje : MonoBehaviour
 
 
       
+    }
+    public void pelotalenta()
+    {
+
+       StartCoroutine(pelota.pelotalenta());
+
     }
 
     

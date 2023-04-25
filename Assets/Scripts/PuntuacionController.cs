@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PuntuacionController : MonoBehaviour
 {
@@ -33,4 +35,16 @@ public class PuntuacionController : MonoBehaviour
     {
         textoPuntos.text = "Puntos: " + puntosTotales;
     }
+
+    public void GuardarRecord()
+    {
+        if(puntosTotales >= PlayerPrefs.GetInt("record"+ SceneManager.GetActiveScene().name,0))
+        {
+             PlayerPrefs.SetInt("record"+ SceneManager.GetActiveScene().name,puntosTotales);
+            Debug.Log(PlayerPrefs.GetInt("record"+ SceneManager.GetActiveScene().name,0));
+        }
+
+
+    }
+
 }

@@ -11,7 +11,10 @@ public class InterfazController : MonoBehaviour
     
     public static InterfazController instance;
 
-   
+   public TextMeshProUGUI PuntosfinalesVictoria;
+
+   public TextMeshProUGUI RecordVictoria;
+
 
     List<GameObject> spritevidas = new List<GameObject>();
 
@@ -25,6 +28,9 @@ public class InterfazController : MonoBehaviour
 
     public int plataformasRestantes;
 
+    public TextMeshProUGUI PuntosfinalesDerrota;
+
+   public TextMeshProUGUI RecordDerrota;
 
     private void Awake()
     {
@@ -72,7 +78,8 @@ public class InterfazController : MonoBehaviour
         {
 
             pantalladerrota.SetActive(true);
-
+            PuntosfinalesDerrota.text = "puntuacion: "+ PuntuacionController.Instance.puntosTotales.ToString();
+            RecordDerrota.text="record: "+ PlayerPrefs.GetInt("record"+ SceneManager.GetActiveScene().name,0).ToString();
         }
     }
     public void reiniciarlevel()
@@ -99,6 +106,10 @@ public class InterfazController : MonoBehaviour
     public void MostrarPantallaVictoria()
     {
         pantallaVictoria.SetActive(true);
+        PuntosfinalesVictoria.text = "puntuacion: "+ PuntuacionController.Instance.puntosTotales.ToString();
+        RecordVictoria.text="record: "+ PlayerPrefs.GetInt("record"+ SceneManager.GetActiveScene().name,0).ToString();
+
+
     }
   
 }

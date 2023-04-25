@@ -55,7 +55,7 @@ public class Ball : MonoBehaviour
             direccion.x = Random.Range(-anguloMaximo, anguloMaximo);
 
             collision.gameObject.GetComponent<Plataforma>().HitByBall();
-            PuntuacionController.Instance.AgregarPuntos(10); // Añadir 10 puntos al destruir una plataforma
+          //  PuntuacionController.Instance.AgregarPuntos(10); // Añadir 10 puntos al destruir una plataforma
         }
         else if (collision.gameObject.CompareTag("Zona Muerte"))
         {
@@ -96,11 +96,20 @@ public class Ball : MonoBehaviour
         }
         else
         {
+            PuntuacionController.Instance.GuardarRecord();
+
             InterfazController.instance.perdervida();
             activada = false;
             gameObject.SetActive(false);
         }
 
     }
-
+    public IEnumerator pelotalenta()
+    {
+        float velocidadprevia= velocidad;
+        velocidad= velocidadprevia/2;
+        yield return new WaitForSeconds(8f);
+        velocidad= velocidadprevia;
+    }
+    
 }

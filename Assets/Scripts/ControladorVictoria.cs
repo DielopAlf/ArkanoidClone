@@ -26,7 +26,8 @@ public class ControladorVictoria : MonoBehaviour
 
     public void Start()
     {
-        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length+1;
+        plataformasRestantes = GameObject.FindGameObjectsWithTag("Plataforma").Length;
+        Debug.Log(plataformasRestantes);
     }
 
     public void CheckVictory()
@@ -35,6 +36,7 @@ public class ControladorVictoria : MonoBehaviour
         {
             pelota.activada = false;
             pelota.gameObject.SetActive(false);
+            PuntuacionController.Instance.GuardarRecord();
             InterfazController.instance.MostrarPantallaVictoria();
         }
     }
