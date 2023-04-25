@@ -5,11 +5,11 @@ using UnityEngine;
 public class PelotaLenta : MonoBehaviour
 {
     public float speed;
-
+      public float tiempoVida = 10f;
 
     void Start()
     {
-        
+         Destroy(gameObject, tiempoVida);
     }
 
     // Update is called once per frame

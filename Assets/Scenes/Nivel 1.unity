@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direccion: {x: 0, y: 0, z: 0}
   velocidad: 6
-  vidas: 3
+  vidas: 15
   textoVidas: {fileID: 0}
   anguloMaximo: 0.7
   posicionInicial: {x: 0, y: 0}
@@ -3051,7 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f2c82715e2048418c845d1a363f888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 0.5
+  speed: 0
   tiempoVida: 10
 --- !u!212 &811301162
 SpriteRenderer:
@@ -3332,7 +3332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &820500080
 Transform:
   m_ObjectHideFlags: 0
@@ -5205,10 +5205,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerups:
   - {fileID: 5961129419381223257, guid: 9bdfc419cde8b7a4bbf9544e8f9af578, type: 3}
-  - {fileID: 0}
   puntos: 10
   GolpesparaRomperse: 2
-  probabilidad: 1
+  probabilidad: 0.3
 --- !u!1 &1249761410
 GameObject:
   m_ObjectHideFlags: 0

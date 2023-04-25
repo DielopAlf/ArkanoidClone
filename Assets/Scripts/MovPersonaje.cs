@@ -50,6 +50,10 @@ public class MovPersonaje : MonoBehaviour
        StartCoroutine(pelota.pelotalenta());
 
     }
+    /*public void pelotadestructora()
+{
+    StartCoroutine(pelota.pelotadestructora());
+}*/
 
     
 }

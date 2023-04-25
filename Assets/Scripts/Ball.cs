@@ -15,6 +15,9 @@ public class Ball : MonoBehaviour
     public bool activada;
     public float esperaInicial = 2f;
 
+   
+private float velocidadprevia;
+
     public PuntuacionController puntuacionController;
 
     void Start()
@@ -108,8 +111,12 @@ public class Ball : MonoBehaviour
     {
         float velocidadprevia= velocidad;
         velocidad= velocidadprevia/2;
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(10f);
         velocidad= velocidadprevia;
     }
+}
+/*public IEnumerator pelotadestructora()
+{
     
 }
+}*/
